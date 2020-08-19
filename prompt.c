@@ -10,7 +10,7 @@ void prompt(void)
 	ssize_t err;
 	char *shpath, *sr;
 
-	shpath = getpath(environ);
+	shpath = getpath();
 	while (x >= 0)
 	{
 		x = 0;

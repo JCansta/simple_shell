@@ -1,7 +1,6 @@
 #include "holberton.h"
 /**
  * getpath - find the PATH in the environ char
- * @env: the environ char
  * Return: the string with the PATH
  */
 char *getpath(void)
