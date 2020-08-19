@@ -10,11 +10,12 @@ void prompt(void)
 	ssize_t err;
 	char *shpath, *sr;
 
-	shpath = getpath(environ);
+	shpath = getpath();
 	while (x >= 0)
 	{
 		x = 0;
 		printpath();
+		s = NULL;
 		err = getline(&s, &buff, stdin);
 		if (err == EOF)
 			exit(1);
