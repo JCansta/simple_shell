@@ -1,7 +1,11 @@
 #include "holberton.h"
-/*
- * _which: busca la dirección donde se encuentra el comando, comparandola
- * on cada una de las direcciones dadas por el path
+
+/**
+ * _which - looks for the address where the command is located.
+ * @s: string variable.
+ * @shpath: path.
+ * @val: validator variable.
+ * Return: NULL.
  */
 char *_which(char *s, char *shpath, int val)
 {
