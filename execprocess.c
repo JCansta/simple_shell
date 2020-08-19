@@ -35,6 +35,5 @@ void execprocess(char *shpath)
 	else
 	{
 		wait(&status);
-		//printf("%d", errno);
 	}
 }
