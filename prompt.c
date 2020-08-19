@@ -15,6 +15,7 @@ void prompt(void)
 	{
 		x = 0;
 		printpath();
+		s = NULL;
 		err = getline(&s, &buff, stdin);
 		if (err == EOF)
 			exit(1);
