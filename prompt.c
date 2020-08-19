@@ -18,7 +18,7 @@ void prompt(void)
 		s = NULL;
 		err = getline(&s, &buff, stdin);
 		if (err == EOF)
-			exit(1);
+			exit(EXIT_FAILURE);
 		sr = malloc(sizeof(char) * 60);
 		strcat(sr, s);
 		if (built_in(sr, environ))

@@ -13,7 +13,7 @@ int built_in(char *sr, char **env)
 	ssize_t err_val;
 
 	if (sr[1] == '\0')
-		return (1);
+		return (EXIT_FAILURE);
 	token2[0] = strtok(sr, " ,!¡¿?\'\"\n\t");
 	token2[1] = strtok(NULL, " ,!¡¿?\'\"\n\t");
 	if (strcmp(token2[0], "exit") == 0)

@@ -6,11 +6,11 @@
  */
 void execprocess(char *shpath)
 {
+	char *argv[512], *token, *delimiters = " ,!¡¿?\'\"\n\t";
+	int x = 0, status;
+
 	if (fork() == 0)
 	{
-		char *argv[512], *token, *delimiters = " ,!¡¿?\'\"\n\t";
-		int x = 0;
-
 		token = strtok(s, delimiters);
 		while (token != NULL)
 		{
@@ -19,11 +19,22 @@ void execprocess(char *shpath)
 			x++;
 		}
 		argv[0] = _which(argv[0], shpath, 1);
-		if (execve(argv[0], argv, NULL) == -1)
+		if (argv[0] != NULL)
 		{
-			perror("Error:");
+			if (execve(argv[0], argv, NULL) == -1)
+			{
+				perror("Error:");
+			}
+		}
+		else
+		{
+			printf("Error: command not found\n");
+			exit(EXIT_FAILURE);
 		}
 	}
 	else
-		wait(NULL);
+	{
+		wait(&status);
+		//printf("%d", errno);
+	}
 }
