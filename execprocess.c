@@ -25,6 +25,7 @@ void execprocess(char *shpath)
 			{
 				perror("Error:");
 			}
+
 		}
 		else
 		{
@@ -34,6 +35,6 @@ void execprocess(char *shpath)
 	}
 	else
 	{
-		wait(&status);
+		wait(NULL);
 	}
 }
