@@ -6,5 +6,5 @@
 int main(void)
 {
 	prompt();
-	return (EXIT_SUCCESS);
+	return (status);
 }

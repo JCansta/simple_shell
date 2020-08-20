@@ -24,4 +24,5 @@ char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 extern char **environ;
 char *s;
+int status;
 #endif

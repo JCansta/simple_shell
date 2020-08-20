@@ -7,7 +7,7 @@
 void execprocess(char *shpath)
 {
 	char *argv[512], *token, *delimiters = " ,!¡¿?\'\"\n\t";
-	int x = 0, status;
+	int x = 0;
 
 	if (fork() == 0)
 	{
