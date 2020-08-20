@@ -12,5 +12,4 @@ void printpath(void)
 	getcwd(path, buff);
 	if (isatty(STDIN_FILENO))
 		printf("%s$ ", path);
-	//exit(1);
 }
