@@ -3,8 +3,10 @@
  * main - a simple shell, imitation of prompt
  * Return: finish the process.
  */
-int main(void)
+int main(int argc, char **argv)
 {
+	(void)argc;
+	errgv = argv[0];
 	prompt();
-	return (status);
+	exit(status);
 }

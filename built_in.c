@@ -17,7 +17,7 @@ int built_in(char *sr, char **env)
 	token2[0] = strtok(sr, " ,!¡¿?\'\"\n\t");
 	token2[1] = strtok(NULL, " ,!¡¿?\'\"\n\t");
 	if (strcmp(token2[0], "exit") == 0)
-		exit(1);
+		exit(status);
 	if (strcmp(token2[0], "cd") == 0)
 	{
 		if (token2[1] != NULL)
@@ -25,7 +25,7 @@ int built_in(char *sr, char **env)
 			err_val = chdir(token2[1]);
 			if (err_val == -1)
 			{
-				printf("Not directory Found or error trying to change\n");
+				_printerror(token2[0], 2, token2[1]);
 				up_pwd();
 				return (1);
 			}

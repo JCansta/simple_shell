@@ -10,6 +10,7 @@ void printpath(void)
 	size_t buff = 50;
 
 	getcwd(path, buff);
-	if (isatty(STDOUT_FILENO) == 1)
+	if (isatty(STDIN_FILENO))
 		printf("%s$ ", path);
+	//exit(1);
 }

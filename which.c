@@ -34,5 +34,6 @@ char *_which(char *s, char *shpath, int val)
 	}
 	if (val == 1)
 		return (_which(s, shpath, 0));
+	_printerror(s, 127, NULL);
 	return (NULL);
 }
