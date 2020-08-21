@@ -7,19 +7,34 @@
  */
 void _printerror(char *com, int error, char *token)
 {
+	char *errorout = NULL;
+	size_t leng;
+
 	if (error == 126)
 	{
-		printf("%s: %d: %s: Permission denied\n", errgv, i, com);
+		errorout = mstrcat(6, errgv, ": ", convert(i, 10), ":", com,
+				": Permission denied\n");
+		leng = strlen(errorout);
+		write(2, errorout, leng);
+		free(errorout);
 		exit(error);
 	}
 	if (error == 2)
 	{
-		printf("%s: %d: %s: can't %s to %s\n", errgv, i, com, com, token);
+		errorout = mstrcat(10, errgv, ": ", convert(i, 10), ": ",
+				com, ": can't ", com, " to ", token, "\n");
+		leng = strlen(errorout);
+		write(2, errorout, leng);
+		free(errorout);
 		status = error;
 	}
 	if (error == 127)
 	{
-		printf("%s: %d: %s: not found\n", errgv, i, com);
+		errorout = mstrcat(6, errgv, ": ", convert(i, 10), ":",
+				com, ": not found\n");
+		leng = strlen(errorout);
+		write(2, errorout, leng);
+		free(errorout);
 		exit(error);
 	}
 }
