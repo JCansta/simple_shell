@@ -14,7 +14,7 @@ void _printerror(char *com, int error, char *token)
 	{
 		errorout = mstrcat(6, errgv, ": ", convert(i, 10), ":", com,
 				": Permission denied\n");
-		leng = strlen(errorout);
+		leng = _strlen(errorout);
 		write(2, errorout, leng);
 		free(errorout);
 		exit(error);
@@ -23,7 +23,7 @@ void _printerror(char *com, int error, char *token)
 	{
 		errorout = mstrcat(10, errgv, ": ", convert(i, 10), ": ",
 				com, ": can't ", com, " to ", token, "\n");
-		leng = strlen(errorout);
+		leng = _strlen(errorout);
 		write(2, errorout, leng);
 		free(errorout);
 		status = error;
@@ -32,7 +32,7 @@ void _printerror(char *com, int error, char *token)
 	{
 		errorout = mstrcat(6, errgv, ": ", convert(i, 10), ":",
 				com, ": not found\n");
-		leng = strlen(errorout);
+		leng = _strlen(errorout);
 		write(2, errorout, leng);
 		free(errorout);
 		exit(error);

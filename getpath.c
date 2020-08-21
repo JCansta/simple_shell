@@ -9,7 +9,7 @@ char *getpath(void)
 
 	while (environ[i])
 	{
-		val  = strncmp(environ[i], "PATH", 4);
+		val  = _strncmp(environ[i], "PATH", 4);
 		if (val == 0)
 		{
 			return (environ[i]);

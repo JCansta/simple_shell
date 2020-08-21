@@ -12,10 +12,10 @@ void up_pwd(void)
 	getcwd(path, buff);
 	while (environ[i])
 	{
-		val = strncmp(environ[i], "PWD", 3);
+		val = _strncmp(environ[i], "PWD", 3);
 		if (val == 0)
 		{
-			strcpy(&environ[i][4], path);
+			_strcpy(&environ[i][4], path);
 			break;
 		}
 		i++;

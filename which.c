@@ -19,13 +19,13 @@ char *_which(char *s, char *shpath, int val)
 		temp = malloc(sizeof(char) * 60);
 		if (val == 1)
 		{
-		strcat(temp, token);
-		strcat(temp, "/");
+		_strcat(temp, token);
+		_strcat(temp, "/");
 		}
-		strcat(temp, s);
+		_strcat(temp, s);
 		if (stat(temp, &st) == 0)
 		{
-			strcpy(token, temp);
+			_strcpy(token, temp);
 			free(temp);
 			return (token);
 		}

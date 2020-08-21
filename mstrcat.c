@@ -15,7 +15,7 @@ char *mstrcat(int x, ...)
 		return (NULL);
 	va_start(arg, x);
 	while (x--)
-		strcat(s, va_arg(arg, char*));
+		_strcat(s, va_arg(arg, char*));
 
 	va_end(arg);
 	return (s);
