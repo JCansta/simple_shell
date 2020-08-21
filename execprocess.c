@@ -7,7 +7,10 @@
 void execprocess(char *shpath)
 {
 	char *argv[512], *token, *delimiters = " ,!¡¿?\'\"\n\t";
-	int x = 0, statuschild;
+	int x = 0, statuschild, b;
+
+	for (b = 0; b < 512; b++)
+		argv[b] = NULL;
 
 	if (fork() == 0)
 	{
@@ -31,5 +34,6 @@ void execprocess(char *shpath)
 	{
 		wait(&statuschild);
 		status = WEXITSTATUS(statuschild);
+		free(s);
 	}
 }

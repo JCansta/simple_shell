@@ -11,6 +11,7 @@ char *mstrcat(int x, ...)
 	char *s;
 
 	s = malloc(sizeof(char) * 60);
+	s[0] = 0;
 	if (s == NULL)
 		return (NULL);
 	va_start(arg, x);

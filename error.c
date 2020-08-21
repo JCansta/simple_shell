@@ -17,6 +17,7 @@ void _printerror(char *com, int error, char *token)
 		leng = _strlen(errorout);
 		write(2, errorout, leng);
 		free(errorout);
+		free(com);
 		exit(error);
 	}
 	if (error == 2)
@@ -26,6 +27,7 @@ void _printerror(char *com, int error, char *token)
 		leng = _strlen(errorout);
 		write(2, errorout, leng);
 		free(errorout);
+		free(com);
 		status = error;
 	}
 	if (error == 127)
@@ -35,6 +37,7 @@ void _printerror(char *com, int error, char *token)
 		leng = _strlen(errorout);
 		write(2, errorout, leng);
 		free(errorout);
+		free(com);
 		exit(error);
 	}
 }
