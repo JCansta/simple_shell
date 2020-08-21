@@ -23,7 +23,6 @@ void execprocess(char *shpath)
 		{
 			if (execve(argv[0], argv, NULL) == -1)
 			{
-				printf("dsfd");
 				_printerror(argv[0], 126, NULL);
 			}
 		}

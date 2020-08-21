@@ -20,7 +20,7 @@ void prompt(void)
 		if (err == EOF)
 			break;
 		sr = malloc(sizeof(char) * 60);
-		strcat(sr, s);
+		_strcat(sr, s);
 		if (built_in(sr, environ))
 			goto postfork;
 		signal(SIGINT, sig);

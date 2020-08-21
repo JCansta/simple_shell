@@ -8,19 +8,15 @@
 
 char *_strcat(char *dest, char *src)
 {
-	char *cont = dest;
-	char *contsrc = src;
+	int y, j;
 
-	while (*cont != '\0')
+	y = j = 0;
+	while (*(dest + y))
+		y++;
+	while ((*(dest + y) = *(src + j)))
 	{
-		cont++;
-	}
-
-	while (*contsrc != '\0')
-	{
-		*cont = *contsrc;
-		contsrc++;
-		cont++;
+		y++;
+		j++;
 	}
 	return (dest);
 }
@@ -69,26 +65,6 @@ int _strcmp(char *s1, char *s2)
 
 	return (0);
 }
-
-/**
- * *_strcpy - copy a string.
- * @dest:string that recive the value of the other one.
- * @src:source string with the info
- * Return: Always 0.
- */
-
-char *_strcpy(char *dest, char *src)
-{
-	int count;
-
-	for (count = 0; src[count] != '\0'; count++)
-		dest[count] = src[count];
-
-	dest[count] = '\0';
-
-	return (dest);
-}
-
 /**
  * _strlen - calculates the length of the string.
  * @s:pointer variable.

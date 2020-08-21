@@ -15,7 +15,6 @@ void up_pwd(void)
 		val = _strncmp(environ[i], "PWD", 3);
 		if (val == 0)
 		{
-			_strcpy(&environ[i][4], path);
 			break;
 		}
 		i++;

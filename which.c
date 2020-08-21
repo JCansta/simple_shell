@@ -25,7 +25,7 @@ char *_which(char *s, char *shpath, int val)
 		_strcat(temp, s);
 		if (stat(temp, &st) == 0)
 		{
-			_strcpy(token, temp);
+			token = mstrcat(1, temp);
 			free(temp);
 			return (token);
 		}
