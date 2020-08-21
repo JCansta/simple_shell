@@ -74,3 +74,26 @@ int _strcmp(char *s1, char *s2)
 
     return (0);
 }
+
+/**
+ * *_strcpy - copy a string.
+ * @dest:string that recive the value of the other one.
+ * @src:source string with the info
+ * Return: Always 0.
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+
+    int count;
+
+
+    for (count = 0; src[count] != '\0'; count++)
+
+    dest[count] = src[count];
+
+
+    dest[count] = '\0';
+
+    return (dest);
+}
