@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdarg.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
@@ -27,6 +28,8 @@ void _printerror(char *com, int error, char *token);
  * int _strcmp(char *s1, char *s2);
  * int _strncmp(char *s1, char *s2, size_t n);
  */
+char *mstrcat(int x, ...);
+char *convert(long int num, int base);
 extern char **environ;
 char *s, *errgv;
 int status, i;
