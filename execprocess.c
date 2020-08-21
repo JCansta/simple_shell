@@ -7,7 +7,7 @@
 void execprocess(char *shpath)
 {
 	char *argv[512], *token, *delimiters = " ,!¡¿?\'\"\n\t";
-	int x = 0,statuschild;
+	int x = 0, statuschild;
 
 	if (fork() == 0)
 	{
@@ -22,7 +22,10 @@ void execprocess(char *shpath)
 		if (argv[0] != NULL)
 		{
 			if (execve(argv[0], argv, NULL) == -1)
+			{
+				printf("dsfd");
 				_printerror(argv[0], 126, NULL);
+			}
 		}
 	}
 	else
