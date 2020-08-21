@@ -19,6 +19,6 @@ void up_pwd(void)
 		}
 		i++;
 	}
-	val = strlen(path) + 4;
+	val = _strlen(path) + 4;
 	environ[i][val] = '\0';
 }

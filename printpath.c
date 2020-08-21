@@ -8,8 +8,13 @@ void printpath(void)
 {
 	char path[50];
 	size_t buff = 50;
+	int leng;
 
 	getcwd(path, buff);
+	leng = _strlen(path);
 	if (isatty(STDIN_FILENO))
-		printf("%s$ ", path);
+	{
+		write(1, path, leng);
+		write(1, "$ ", 2);
+	}
 }
